@@ -87,6 +87,7 @@
         var html =
           "<strong>Available commands:</strong><br><br>" +
           rows.join("<br>") +
+          "<br><br>Tip: Tab to autocomplete, ↑/↓ for history, Ctrl+/ to search history" +
           "<br><br>type 'about' to get started";
         return { type: "html", html: html };
       },
