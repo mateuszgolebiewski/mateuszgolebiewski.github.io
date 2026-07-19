@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Mateusz Golebiewski — Platform Engineer</title>
+  <meta name="description" content="Mateusz Golebiewski — Senior Platform Engineer. Interactive terminal CV." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <noscript>
+    <div style="font-family: monospace; padding: 2rem; max-width: 640px; margin: 0 auto;">
+      <h1>Mateusz Golebiewski — Senior Platform Engineer</h1>
+      <p>
+        Experienced Senior Platform Engineer with a strong background in developing bespoke
+        solutions, managing cloud infrastructure, and implementing CI/CD pipelines. Proven ability
+        to design and deploy secure and scalable solutions using technologies like Terraform,
+        Azure, Kubernetes, and Python.
+      </p>
+      <p>Email: mateuszgolebiewski@icloud.com &middot; LinkedIn: linkedin.com/in/mateuszgoleb</p>
+      <p><a href="assets/cv.pdf">Download CV (PDF)</a></p>
+    </div>
+  </noscript>
+
+  <div class="terminal-window">
+    <div class="terminal-titlebar">
+      <span class="dot dot-red" aria-hidden="true"></span>
+      <span class="dot dot-yellow" aria-hidden="true"></span>
+      <span class="dot dot-green" aria-hidden="true"></span>
+      <div class="terminal-title">mateusz@portfolio: ~</div>
+    </div>
+
+    <div class="terminal-body">
+      <div id="output"></div>
+      <div id="prompt-line">
+        <span class="prompt-label">guest@mateuszgolebiewski:~$ </span><span id="typed-text"></span><span class="cursor"></span>
+        <input
+          id="hidden-input"
+          type="text"
+          autocomplete="off"
+          autocapitalize="off"
+          autocorrect="off"
+          spellcheck="false"
+          inputmode="text"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div id="sr-status" aria-live="polite" class="sr-only"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/commands.js"></script>
+  <script src="js/terminal.js"></script>
+</body>
+</html>
