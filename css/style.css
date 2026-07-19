@@ -41,6 +41,7 @@ body {
   margin: 0;
   overflow: hidden;
   overscroll-behavior: none;
+  background: var(--bg-page);
 }
 
 body {
@@ -209,6 +210,7 @@ body {
   .terminal-window {
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     max-width: none;
     border-radius: 0;
   }

@@ -25,6 +25,7 @@
   var promptLabelEl = document.getElementById("prompt-label");
   var inputEl = document.getElementById("hidden-input");
   var bodyEl = document.querySelector(".terminal-body");
+  var srStatusEl = document.getElementById("sr-status");
 
   var PROMPT_TEXT = "guest@mateuszgolebiewski:~$ ";
 
@@ -78,6 +79,19 @@
     typedEl.textContent = inputEl.value;
   }
 
+  function htmlToText(html) {
+    var tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || "";
+  }
+
+  function announce(text) {
+    srStatusEl.textContent = "";
+    window.setTimeout(function () {
+      srStatusEl.textContent = text;
+    }, 50);
+  }
+
   function dispatch(raw) {
     var trimmed = raw.trim();
     if (!trimmed) return;
@@ -86,16 +100,21 @@
     var args = parts.slice(1);
     var entry = CV.resolveCommand(cmdWord);
     if (!entry) {
-      printLines(["bash: " + cmdWord + ": command not found"]);
+      var notFound = "bash: " + cmdWord + ": command not found";
+      printLines([notFound]);
+      announce(notFound);
       return;
     }
     var result = entry.run(args);
     if (result.type === "clear") {
       outputEl.innerHTML = "";
+      announce("Terminal cleared.");
     } else if (result.type === "html") {
       printHTML(result.html);
+      announce(htmlToText(result.html));
     } else {
       printLines(result.lines);
+      announce(result.lines.join(". "));
     }
   }
 

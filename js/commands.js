@@ -102,8 +102,7 @@
           "<strong>Name:</strong> " + p.name,
           "<strong>Location:</strong> " + p.location,
           "<strong>About:</strong> " + p.summary,
-          "<strong>LinkedIn:</strong> linkedin.com/" + p.linkedin,
-          "<strong>E-Mail:</strong> " + p.email,
+          "type 'contact' for ways to reach me",
         ];
         return { type: "html", html: lines.join("<br><br>") };
       },
