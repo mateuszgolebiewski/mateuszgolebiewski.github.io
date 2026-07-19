@@ -2,14 +2,15 @@
   "use strict";
 
   var BOOT_LINES = [
+    { text: "[    0.000000] Linux version 6.8.0-mateusz #1 SMP PREEMPT_DYNAMIC", pause: 60 },
+    { text: "[    0.041982] console [tty0] enabled", pause: 60 },
     { ok: true, text: "Mounting /home/guest", pause: 90 },
     { ok: true, text: "Bringing up eth0", pause: 90 },
     { ok: true, text: "Starting sshd", pause: 90 },
     { ok: true, text: "Authenticating with Azure + AWS", pause: 90 },
     { ok: false, text: "Searching for a will to attend more status meetings", pause: 90 },
     { ok: true, text: "Loading dotfiles", pause: 90 },
-    { text: "Connecting to guest@mateuszgolebiewski..." },
-    { text: "Connected. Type 'help' to get started." },
+    { text: "Welcome back, guest. Type 'help' to get started." },
   ];
   var CHAR_DELAY = 18;
   var LINE_PAUSE = 350;

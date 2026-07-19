@@ -168,8 +168,12 @@
       run: function () {
         var p = data.profile;
         var lines = [
-          "<strong>E-Mail:</strong> " + p.email,
-          "<strong>LinkedIn:</strong> linkedin.com/" + p.linkedin,
+          '<strong>E-Mail:</strong> <a href="mailto:' + p.email + '">' + p.email + "</a>",
+          '<strong>LinkedIn:</strong> <a href="https://linkedin.com/' +
+            p.linkedin +
+            '" target="_blank" rel="noopener">linkedin.com/' +
+            p.linkedin +
+            "</a>",
         ];
         return { type: "html", html: lines.join("<br><br>") };
       },
