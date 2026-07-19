@@ -40,7 +40,7 @@
     return (
       "<strong>Experience:</strong><br><br>" +
       rows.join("<br>") +
-      "<br><br>type 'experience &lt;number&gt;' or 'experience &lt;company-slug&gt;' for details, e.g. 'experience 1' or 'experience capgemini'"
+      "<br><br>type 'experience &lt;number&gt;' for details, e.g. 'experience 1'"
     );
   }
 
@@ -49,8 +49,8 @@
       return "  • " + b;
     });
     return (
-      "<strong>" + job.role + " — " + job.company + "</strong><br>" +
-      "<strong>Dates:</strong> " + job.start + " – " + job.end +
+      "<strong>💼 " + job.role + " — " + job.company + "</strong><br>" +
+      "<strong>📅 Dates:</strong> " + job.start + " – " + job.end +
       "<br><br>" +
       bullets.join("<br>")
     );
@@ -99,9 +99,9 @@
       run: function () {
         var p = data.profile;
         var lines = [
-          "<strong>Name:</strong> " + p.name,
-          "<strong>Location:</strong> " + p.location,
-          "<strong>About:</strong> " + p.summary,
+          "<strong>👤 Name:</strong> " + p.name,
+          "<strong>📍 Location:</strong> " + p.location,
+          "<strong>📝 About:</strong> " + p.summary,
           "type 'contact' for ways to reach me",
         ];
         return { type: "html", html: lines.join("<br><br>") };
@@ -130,11 +130,11 @@
       run: function () {
         var groups = data.education.map(function (e) {
           return (
-            "<strong>Degree:</strong> " +
+            "<strong>🎓 Degree:</strong> " +
             e.degree +
-            "<br><strong>Institution:</strong> " +
+            "<br><strong>🏫 Institution:</strong> " +
             e.institution +
-            "<br><strong>Date:</strong> " +
+            "<br><strong>📅 Date:</strong> " +
             e.date
           );
         });
@@ -146,7 +146,7 @@
       aliases: ["certs"],
       description: "professional certifications",
       run: function () {
-        var html = "<strong>Certifications:</strong><br><br>" + data.certifications.join("<br>");
+        var html = "<strong>📜 Certifications:</strong><br><br>" + data.certifications.join("<br>");
         return { type: "html", html: html };
       },
     },
@@ -168,8 +168,8 @@
       run: function () {
         var p = data.profile;
         var lines = [
-          '<strong>E-Mail:</strong> <a href="mailto:' + p.email + '">' + p.email + "</a>",
-          '<strong>LinkedIn:</strong> <a href="https://linkedin.com/' +
+          '<strong>📧 E-Mail:</strong> <a href="mailto:' + p.email + '">' + p.email + "</a>",
+          '<strong>🔗 LinkedIn:</strong> <a href="https://linkedin.com/' +
             p.linkedin +
             '" target="_blank" rel="noopener">linkedin.com/' +
             p.linkedin +
